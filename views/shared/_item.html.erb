@@ -1,0 +1,9 @@
+<li class="<%= item.status %>">
+  <%= item.name %>
+  <input type="hidden" value="<%= item.name %>" name="items[][name]">
+  <input type="hidden" value="<%= item.status %>" name="items[][status]">
+  <button type="submit" name="toggle" value="<%= item.name %>"
+    class="toggle <%= item.status %>">
+    <%= item.done? ? "Undo" : "Done" %>
+  </button>
+</li>

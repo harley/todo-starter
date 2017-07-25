@@ -1,0 +1,103 @@
+body {
+  font-family: Sans-serif;
+}
+h1 {
+  color: #efefef;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  border: 1px solid #efefef;
+  margin: 4px;
+  padding: 6px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 #ccc;
+}
+li.done {
+  text-decoration: line-through;
+  color: #999;
+}
+.list {
+  background-color: #efefef;
+  color: #666;
+  padding: 5px;
+  width: 250px;
+  font-size: 0.8em;
+}
+.list-header {
+  font-weight: bold;
+  padding: 5px;
+}
+button.toggle {
+  float: right;
+}
+button {
+  color: #efefef;
+  border: 1px solid #efefef;
+  cursor: pointer;
+  margin-top: -2px;
+}
+button.undone {
+  background-color: rgba(0, 121, 191, 0.5);
+}
+button.done {
+  background-color: rgba(120, 120, 120, 0.5);
+}
+input.new-item {
+  background-color: transparent;
+  border: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  outline: none;
+  font-size: 1em;
+  width: calc(100% - 10px);
+  box-sizing: border-box;
+}
+input.new-item:focus {
+  background-color: white;
+  padding: 5px;
+  padding-bottom: 15px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  box-shadow: 0 1px 0 #ccc;
+}
+
+a.sort-link img {
+  width: 100%;
+  opacity: 0.3;
+}
+
+a.sort-link {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+a.sort-link.current img {
+  opacity: 1;
+}
+
+.list-header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 5px;
+}
+
+button.save {
+  vertical-align: top;
+  background-color: rgba(0, 121, 191, 0.5);
+}
+button.hidden {
+  display: none;
+}
+
+form.update-all,
+form.add-item {
+  margin-bottom: 0;
+}
