@@ -1,10 +1,10 @@
-- [ ] Learn Hash
+Today 😇
 - [ ] Learn Methods
 - [ ] Learn Class
 - [ ] Learn File Reading
 - [ ] Learn Sinatra
 - [ ] Finish Current Lab
 - [ ] Learn Strings
-- [ ] Learn HTML
+- [x] Learn HTML
 - [x] Learn Numbers
 - [x] Learn Variables

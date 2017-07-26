@@ -1,19 +1,16 @@
-<h1 id="heading" style="color:red">Torello</h1>
+<h1 id="heading"><%= @title || "Torello" %></h1>
 
 <div class="list">
   <form class="update-all" action="update-all" method="post">
     <div class="list-header-container">
-      <div class="list-header">Today</div>
+      <div class="list-header"><%= list.name %></div>
       <div name="list-menu">
         <button class="save hidden" name="save_all">Save</button>
-        <a class="sort-link <%= 'current' if sort == 'asc' %>" href="?sort=asc" title="Sort A-Z"><img src="/images/A-Z-512.png" /></a>
-        <a class="sort-link <%= 'current' if sort == 'desc' %>" href="?sort=desc" title="Sort Z-A"><img src="/images/Z-A-512.png" /></a>
-        <a class="sort-link <%= 'current' if sort == 'done' %>" href="?sort=done" title="Sort Completed to Bottom"><img src="/images/Check-512.png" /></a>
       </div>
     </div>
     <ul class="js-sortable">
-      <% items.each_with_index do |item, index| %>
-        <%= erb :"shared/_item.html", locals: {item: item, sort: params["sort"]} %>
+      <% list.items.each_with_index do |item, index| %>
+        <%= erb :"shared/_item.html", locals: {item: item} %>
       <% end %>
     </ul>
   </form>
