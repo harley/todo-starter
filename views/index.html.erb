@@ -3,13 +3,14 @@
 <div class="list">
   <form class="update-all" action="lists/update" method="post">
     <input type="hidden" name="id" value="<%= list.id %>">
+    <input type="hidden" name="name" value="<%= list.name %>">
     <div class="list-header-container">
       <div class="list-header"><%= list.name %></div>
       <div name="list-menu">
         <button class="save hidden" name="save_all">Save</button>
       </div>
     </div>
-    <ul class="js-sortable">
+    <ul class="js-sortable-items">
       <% list.items.each_with_index do |item, index| %>
         <%= erb :"shared/_item.html", locals: {item: item} %>
       <% end %>

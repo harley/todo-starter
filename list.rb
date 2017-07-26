@@ -31,7 +31,7 @@ class List
   end
 
   def add(name)
-    @items << Item.new(name.capitalize)
+    self.items << Item.new(name)
   end
 
   def save!

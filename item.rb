@@ -1,18 +1,14 @@
 class Item
-  attr_reader :name
-  attr_accessor :index
+  attr_accessor :name, :status, :index
 
-  def initialize(name, done = false)
-    @name = name
-    @done = done
+  def initialize(name, status = "undone", index = nil)
+    self.name = name
+    self.status = status
+    self.index = index
   end
 
   def done?
-    @done
-  end
-
-  def status
-    done? ? 'done' : 'undone'
+    status == "done"
   end
 
   def display_line
@@ -24,12 +20,16 @@ class Item
   end
 
   def toggle!
-    @done = !@done
+    if status == "done"
+      self.status = "undone"
+    else 
+      self.status = "done"
+    end
   end
 
-  def self.new_from_line(line, index)
-    item = new(line[6..-1], line[3] == 'x')
-    item.index = index
-    item
+  # returns a new item based on a line of text
+  def self.new_from_line(line, index = nil)
+    status = line[3] == 'x' ? "done" : "undone"
+    new(line[6..-1], status, index)
   end
 end

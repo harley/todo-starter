@@ -8,6 +8,8 @@ def debug_params
 end
 
 get "/" do
+  # HINT: you can use instance variables in the view directly without passing to locals
+  # such as this @title instance variable
   @title = "Your App Name"
   list = List.new("0")
   list.load_from_file
@@ -19,11 +21,12 @@ post "/lists/update" do
   debug_params
 
   list = List.new(params["id"])
+  list.name = params["name"]
   # no need to load from file. we will save new contents to file
 
   items = params["items"].map do |item_hash|
     puts "creating Item from item_hash: #{item_hash}"
-    Item.new(item_hash["name"], item_hash["status"] == "done")
+    Item.new(item_hash["name"], item_hash["status"])
   end
   list.items = items
 
