@@ -2,13 +2,22 @@ require_relative "item"
 
 class List
   attr_reader :lines
-  attr_accessor :items, :name
+  attr_accessor :items, :name, :id
   
-  def initialize(filename = "todo.md")
-    @filename = filename
+  def initialize(id)
+    @id = id
+    @lines = []
+    @items = []
+  end
+
+  def load_from_file
     @lines = File.read(filename).split("\n")
     @name = @lines.shift # get the first line to be the List name
     @items = @lines.map.with_index {|line, index| Item.new_from_line(line, index)}
+  end
+
+  def filename
+    "data/#{id}.md"
   end
 
   def toggle_item(name)
@@ -27,6 +36,6 @@ class List
 
   def save!
     lines = [name] + @items.map(&:display_line)
-    File.write(@filename, lines.join("\n"))
+    File.write(filename, lines.join("\n"))
   end
 end

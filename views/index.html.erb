@@ -1,7 +1,8 @@
 <h1 id="heading"><%= @title || "Torello" %></h1>
 
 <div class="list">
-  <form class="update-all" action="update-all" method="post">
+  <form class="update-all" action="lists/update" method="post">
+    <input type="hidden" name="id" value="<%= list.id %>">
     <div class="list-header-container">
       <div class="list-header"><%= list.name %></div>
       <div name="list-menu">
@@ -14,8 +15,7 @@
       <% end %>
     </ul>
   </form>
-  <form class="add-item" action="/add" method="post">
-    <input type="hidden" value="<%= params["sort"] %>" name="sort">
+  <form class="add-item" action="lists/<%= list.id %>/items/add" method="post">
     <input type="text" name="name" class="new-item" placeholder="Add an item..." required>
   </form>
 </div>

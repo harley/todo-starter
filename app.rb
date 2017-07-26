@@ -9,14 +9,17 @@ end
 
 get "/" do
   @title = "Your App Name"
-  list = List.new("todo.md")
+  list = List.new("0")
+  list.load_from_file
   erb :"index.html", locals: {list: list}, layout: :"layout.html"
 end
 
-post "/update-all" do
+# UPDATE a list with id from params["id"]
+post "/lists/update" do
   debug_params
 
-  list = List.new
+  list = List.new(params["id"])
+  # no need to load from file. we will save new contents to file
 
   items = params["items"].map do |item_hash|
     puts "creating Item from item_hash: #{item_hash}"
@@ -33,11 +36,12 @@ post "/update-all" do
   redirect back
 end
 
-post "/add" do
+post "/lists/:id/items/add" do
   debug_params
 
-  list = List.new
-  puts "Creating item #{params['name']}"
+  list = List.new(params["id"])
+  list.load_from_file
+  puts "Creating item #{params['name']} for list #{params['id']}"
   if params["name"]
     list.add(params["name"])
     list.save!
