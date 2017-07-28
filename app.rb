@@ -13,6 +13,11 @@ get "/" do
   @title = "Your App Name"
   list = List.new("0")
   list.load_from_file
+  files = Dir["./data/*.md"]
+  files.each do |e|
+    fi = e[7]
+  end
+  
   erb :"index.html", locals: {list: list}, layout: :"layout.html"
 end
 
