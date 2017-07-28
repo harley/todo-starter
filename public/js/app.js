@@ -6,6 +6,9 @@ sortedContainers.forEach(function(element) {
   element.addEventListener("sortupdate", function(e) {
     console.log("We will learn how to save this dynamically");
     $("button.save").removeClass("hidden");
+
+    
+
     /*
 
     This event is triggered when the user stopped sorting and the DOM position has changed.

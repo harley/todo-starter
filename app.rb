@@ -10,7 +10,7 @@ end
 get "/" do
   # HINT: you can use instance variables in the view directly without passing to locals
   # such as this @title instance variable
-  @title = "Your App Name"
+  @title = "My App Name"
   list = List.new("0")
   list.load_from_file
   files = Dir["data/*.md"]
@@ -20,7 +20,7 @@ get "/" do
     lists << List.new(fi)
   end
   
-  erb :"index.html", locals: {lists: lists}, layout: :"layout.html"
+  erb :"index.html", locals: {list: list}, layout: :"layout.html"
 end
 
 # UPDATE a list with id from params["id"]
