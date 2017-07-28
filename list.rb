@@ -10,6 +10,18 @@ class List
     @items = []
   end
 
+  def self.load_all
+    files = Dir["data/*.md"]
+    lists = []
+    files.each do |e|
+      fi = e[-4]
+      list = List.new(fi)
+      list.load_from_file
+      lists << list
+    end
+    lists
+  end
+
   def load_from_file
     @lines = File.read(filename).split("\n")
     @name = @lines.shift # get the first line to be the List name

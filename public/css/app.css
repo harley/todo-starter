@@ -1,5 +1,7 @@
+
 body {
   font-family: Sans-serif;
+  width: 10000px;
 }
 h1 {
   color: #efefef;
@@ -101,3 +103,9 @@ form.update-all,
 form.add-item {
   margin-bottom: 0;
 }
+
+.list-container{
+  float: left;
+  margin-right: 10px;
+}
+
