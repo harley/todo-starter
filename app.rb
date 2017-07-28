@@ -20,7 +20,7 @@ get "/" do
     lists << List.new(fi)
   end
   
-  erb :"index.html", locals: {list: list}, layout: :"layout.html"
+  erb :"index.html", locals: {lists: lists}, layout: :"layout.html"
 end
 
 # UPDATE a list with id from params["id"]
