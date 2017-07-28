@@ -58,3 +58,8 @@ post "/lists/:id/items/add" do
   end
   redirect back
 end
+
+time = Time.new()
+
+date = "#{time.day}/#{time.month}/#{time.year}"
+
