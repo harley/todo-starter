@@ -27,6 +27,8 @@ li.done {
   padding: 5px;
   width: 250px;
   font-size: 0.8em;
+  float: left;
+  margin-right: 10px;
 }
 .list-header {
   font-weight: bold;

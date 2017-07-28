@@ -4,10 +4,12 @@ Bundler.require
 require_relative "list"
 
 def debug_params
-  puts "PARAMS: #{params}"
+  puts "\nURL: #{request.path_info} :: PARAMS: #{params}"
 end
 
 get "/" do
+  debug_params
+
   # HINT: you can use instance variables in the view directly without passing to locals
   # such as this @title instance variable
   @title = "Your App Name"
