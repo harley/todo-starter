@@ -29,6 +29,8 @@ li.done {
   padding: 5px;
   width: 250px;
   font-size: 0.8em;
+  float: left;
+  margin-right: 10px;
 }
 .list-header {
   font-weight: bold;
@@ -104,8 +106,38 @@ form.add-item {
   margin-bottom: 0;
 }
 
-.list-container{
-  float: left;
-  margin-right: 10px;
+
+.add-list {
+  background-color: rgba(0,0,0,.12);
+  color: #ccc;
+  padding: 10px;
+}
+
+.hidden{
+  display: none;
+}
+
+.newform{
+  width:25%;
+  height:35%;
+}
+
+.save{
+  width:75%;
+  color:#fff;
+  background-color:#61BD4F;
+  border:none;
+  margin-top:7px;
+}
+
+.new-list-name{
+  color:#fff;
+  background-color:#1CA5DB;
+  border:none;
+}
+
+
+.logo{
+  font-family: 'Indie Flower', cursive;
 }
 
