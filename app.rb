@@ -13,9 +13,11 @@ get "/" do
   @title = "Your App Name"
   list = List.new("0")
   list.load_from_file
-  files = Dir["./data/*.md"]
+  files = Dir["data/*.md"]
+  lists = []
   files.each do |e|
-    fi = e[7]
+    fi = e[-4]
+    lists << List.new(fi)
   end
   
   erb :"index.html", locals: {list: list}, layout: :"layout.html"
