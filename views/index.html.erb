@@ -2,15 +2,10 @@
 <h1 id="heading"><%= @title || "Torello" %></h1>
 
 <% lists.each do |list| %>
-
 <div class="list">
-
   <form class="update-all" action="lists/update" method="post">
     <input type="hidden" name="id" value="<%= list.id %>">
     <input type="hidden" name="name" value="<%= list.name %>">
-
-    
-
     <div class="list-header-container">
       <div class="list-header"><%= list.name %></div>
       <div name="list-menu">
@@ -26,8 +21,6 @@
   <form class="add-item" action="lists/<%= list.id %>/items/add" method="post">
     <input type="text" name="name" class="new-item" placeholder="Add an item..." required>
   </form>
-
-  
  </div>
 <% end %>
 
