@@ -52,6 +52,7 @@ post "/lists/:id/items/add" do
   redirect back
 end
 
+#----------------- Add New List ------------------
 
 post "/newlist/name" do
   new_list = List.new("#{params[:id]}")
