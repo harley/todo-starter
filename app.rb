@@ -10,7 +10,7 @@ end
 get "/" do
   # HINT: you can use instance variables in the view directly without passing to locals
   # such as this @title instance variable
-  @title = "My App Name"
+  @title = "Trolo"
   
   lists = List.load_all
   
