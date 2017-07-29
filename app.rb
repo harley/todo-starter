@@ -1,3 +1,4 @@
+
 require 'bundler/setup'
 Bundler.require
 
@@ -53,10 +54,12 @@ end
 
 
 post "/newlist/name" do
-  new_list = List.new("#{params['lname']}")
-  new_list.filename
+  new_list = List.new("#{params[:id]}")
+  new_list.name = "#{params[:id]}" 
   new_list.save!
-  #fi=File.new("#{params["lname"]}.md","w+")
+  List.new("#{new_list.name}")
+  #new_list.filename
+  
   redirect back
 end
 
