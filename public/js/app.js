@@ -28,9 +28,15 @@ sortedContainers.forEach(function(element) {
   });
 });
 
+ $(".add-list").click(()=>{
+    $(".toHide").addClass("hidden");
+    $(".newForm").removeClass("hidden");
+  })
 
-
-
+$(".cancel").click(()=>{
+  $(".toHide").toggleClass("hidden");
+  $(".newForm").toggleClass("hidden");
+})
 
 
 

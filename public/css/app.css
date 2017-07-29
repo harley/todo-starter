@@ -95,8 +95,9 @@ a.sort-link.current img {
 }
 
 button.save {
+  margin-right: 15px;
   vertical-align: top;
-  background-color: rgba(0, 121, 191, 0.5);
+  background-color:#61BD4F ;
 }
 button.hidden {
   display: none;
@@ -119,12 +120,12 @@ form.add-item {
 }
 
 .newform{
-  width:25%;
-  height:35%;
+  width:25px;
+  height:35px;
 }
 
-.save{
-  width:75%;
+input.save{
+  width:50%;
   color:#fff;
   background-color:#61BD4F;
   border:none;
@@ -136,7 +137,6 @@ form.add-item {
   background-color:#1CA5DB;
   border:none;
 }
-
 
 .logo{
   font-family: 'Indie Flower', cursive;

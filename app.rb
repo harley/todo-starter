@@ -11,9 +11,8 @@ get "/" do
   # HINT: you can use instance variables in the view directly without passing to locals
   # such as this @title instance variable
   @title = "Trolo"
-  
   lists = List.load_all
-  
+
   erb :"index.html", locals: {lists:lists}, layout: :"layout.html"
 end
 
@@ -35,7 +34,6 @@ post "/lists/update" do
     puts "Toggle: #{params["toggle"]}"
     list.toggle_item(params["toggle"])
   end
-
   list.save!
   redirect back
 end
@@ -53,6 +51,28 @@ post "/lists/:id/items/add" do
   redirect back
 end
 
+
+post "/newlist/name" do
+  new_list = List.new("#{params['lname']}")
+  new_list.filename
+  new_list.save!
+  #fi=File.new("#{params["lname"]}.md","w+")
+  redirect back
+end
+
+
+
+
+
+#----------------Time Setter--------------------
+
 time = Time.new()
-@date = "#{time.day}/#{time.month}/#{time.year}"
+@today = "#{time.day}/#{time.month}/#{time.year}"
+
+
+
+
+
+
+
 
