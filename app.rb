@@ -65,6 +65,13 @@ post "/newlist/name" do
 end
 
 
+#----------------- Delete a List ------------------
+
+
+
+
+
+
 
 
 
