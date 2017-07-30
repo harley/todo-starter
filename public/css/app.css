@@ -10,7 +10,7 @@ body {
  }
 h1 {
   color: #efefef;
-  margin-left: 460px;
+  margin-left: 530px;
   margin-top: -7px;
   font-size: 2.5em;
 }
@@ -119,9 +119,15 @@ form.add-item {
 
 
 .add-list {
-  background-color: rgba(0,0,0,.12);
+  background-color: rgba(0,0,0,.5);
   color: #ccc;
-  padding: 10px;
+  padding: 15px;
+}
+
+.delete-list {
+  background-color: rgba(0,0,0,.5);
+  color: #ccc;
+  padding: 15px;
 }
 
 .hidden{
@@ -129,14 +135,27 @@ form.add-item {
 }
 
 .newform{
-  width:25px;
-  height:35px;
+  width:35px;
+  height:25px;
+}
+
+.delform{
+  width:35px;
+  height:25px;
 }
 
 input.save{
-  width:150%;
+  width:200%;
   color:#fff;
   background-color:#61BD4F;
+  border:none;
+  margin-top:7px;
+}
+
+input.delete{
+  width:200%;
+  color:#fff;
+  background-color:red;
   border:none;
   margin-top:7px;
 }
@@ -150,7 +169,15 @@ input.save{
 .newform .close{
   position: absolute;
   margin-left: 50px;
-  margin-top: -19px;
+  margin-top: -30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.delform .close{
+  position: absolute;
+  margin-left: 50px;
+  margin-top: -30px;
   font-size: 20px;
   cursor: pointer;
 }

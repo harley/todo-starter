@@ -28,8 +28,29 @@
     <div id="side-menu" class="side-nav">
       <a href="#" class="btn-close" onclick="closeMenu()">&times;</a>
       <a href="#">Home</a>
-      <a href="" onclick="addList()">Add New List</a>
-      <a href="#">Delete List</a>
+
+      
+      <a href="#" onclick="addList()">Add New List</a>
+         <div class="add-list list">
+         <form class="newform hidden" action="/newlist/name" method="post">
+           <input type="text" name="id">
+           <input type="submit" value="Save" class="save">
+        <!-- <a class="close" onclick="closeAdd()">&times;</a> -->
+        </form>
+        </div>
+
+      
+      <a href="#" onclick="deList()">Delete List</a>
+        <div class="delete-list list">
+         <form class="delform hidden" action="/delist/name" method="post">
+           <input type="text" name="id">
+           <input type="submit" value="Delete" class="delete">
+          <!-- <a class="close" onclick="closeDel()">&times;</a> -->
+        </form>
+        </div>
+
+
+
       <a href="#">Logout</a>
     </div>
 

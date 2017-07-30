@@ -28,15 +28,17 @@ sortedContainers.forEach(function(element) {
   });
 });
 
+
  $(".add-list").click(()=>{
     $(".toHide").addClass("hidden");
     $(".newForm").removeClass("hidden");
   })
 
+/*  
 $(".close").click(()=>{
   $(".toHide").toggleClass("hidden");
   $(".newForm").toggleClass("hidden");
-})
+}) */
 
 openMenu=()=>{
   document.getElementById('side-menu').style.width='250px'
@@ -46,11 +48,22 @@ openMenu=()=>{
 closeMenu=()=>{
   document.getElementById('side-menu').style.width='0px'
   document.getElementById('title').style.marginLeft='0px'
+  $(".delForm").addClass("hidden");
+  $(".newForm").addClass("hidden");
 }
 
 addList=()=>{
-    $(".toHide").addClass("hidden");
-    $(".newForm").removeClass("hidden");
+  $(".newForm").removeClass("hidden");
 }
 
+closeAdd=()=>{
+  $(".newForm").addClass("hidden");
+}
+ 
+deList=()=>{
+  $(".delForm").removeClass("hidden");
+}
 
+closeDel=()=>{
+  $(".delForm").addClass("hidden");
+}

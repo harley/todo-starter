@@ -60,18 +60,18 @@ post "/newlist/name" do
   new_list.save!
   List.new("#{new_list.name}")
   #new_list.filename
-  
   redirect back
 end
 
 
 #----------------- Delete a List ------------------
 
-post "/deleteList/name" do
-  list_dump = List.open("#{params[:id]}")
+post "/delist/name" do
+  list_dump = List.new("#{params[:id]}")
+  #direct = list_dump.filename
   files = Dir["data/*.md"]
   files.each do |file|
-    file.delete("#{list_dump.id}")
+    file.delete("")
   end  
   redirect back
 end
