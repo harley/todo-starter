@@ -67,11 +67,14 @@ end
 
 #----------------- Delete a List ------------------
 
-
-
-
-
-
+post "/deleteList/name" do
+  list_dump = List.open("#{params[:id]}")
+  files = Dir["data/*.md"]
+  files.each do |file|
+    file.delete("#{list_dump.id}")
+  end  
+  redirect back
+end
 
 
 

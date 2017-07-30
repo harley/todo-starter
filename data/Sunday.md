@@ -1,5 +1,5 @@
 Sunday
-- [ ] Buy Oat
-- [ ] Buy bread
-- [ ] Buy Peanut
-- [ ] Buy Noodles
+- [x] Buy Oat
+- [x] Buy bread
+- [x] Buy Peanut
+- [x] Buy Noodles
