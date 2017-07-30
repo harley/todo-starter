@@ -33,11 +33,24 @@ sortedContainers.forEach(function(element) {
     $(".newForm").removeClass("hidden");
   })
 
-$(".cancel").click(()=>{
+$(".close").click(()=>{
   $(".toHide").toggleClass("hidden");
   $(".newForm").toggleClass("hidden");
 })
 
+openMenu=()=>{
+  document.getElementById('side-menu').style.width='250px'
+  document.getElementById('title').style.marginLeft='250px'
+}
 
+closeMenu=()=>{
+  document.getElementById('side-menu').style.width='0px'
+  document.getElementById('title').style.marginLeft='0px'
+}
+
+addList=()=>{
+    $(".toHide").addClass("hidden");
+    $(".newForm").removeClass("hidden");
+}
 
 

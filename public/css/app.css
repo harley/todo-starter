@@ -1,10 +1,18 @@
 
 body {
-  font-family: Sans-serif;
-  width: 10000px;
-}
+  font-family: Arial, Helvetica;
+  width: 100%;
+  background-image: url("/images/gym1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+ }
 h1 {
   color: #efefef;
+  margin-left: 460px;
+  margin-top: -7px;
+  font-size: 2.5em;
 }
 ul {
   list-style: none;
@@ -31,6 +39,7 @@ li.done {
   font-size: 0.8em;
   float: left;
   margin-right: 10px;
+  margin-top: 10px;
   border-radius: 3px;
 }
 .list-header {
@@ -125,7 +134,7 @@ form.add-item {
 }
 
 input.save{
-  width:50%;
+  width:150%;
   color:#fff;
   background-color:#61BD4F;
   border:none;
@@ -138,7 +147,81 @@ input.save{
   border:none;
 }
 
+.newform .close{
+  position: absolute;
+  margin-left: 50px;
+  margin-top: -19px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .logo{
   font-family: 'Indie Flower', cursive;
 }
+
+/*---------- Nav Bar Style ---------------*/
+
+.navbar{
+  background-color: #3b5998;
+  overflow: hidden;
+  height: 60px;
+  margin-top: -8px;
+  margin-left: -7px;
+  opacity: .7;
+}
+
+.navbar a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+
+.navbar span:hover{
+  background-color: #ddd;
+  color: #000;
+} 
+
+.navbar ul{
+  padding: 8px 0 0 0 ;
+  list-style: none;
+}
+
+.side-nav{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  opacity: .7;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: .5s;
+}
+
+.side-nav a{
+  padding: 10px 10px 10px 30px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ccc;
+  display: block;
+  transition: .3s;
+}
+
+.side-nav a:hover{
+  color: #fff;
+}
+
+.side-nav .btn-close{
+  position: absolute;
+  top: 0;
+  right: 23px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
 
