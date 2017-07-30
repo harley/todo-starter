@@ -1,0 +1,87 @@
+form.update-all,
+form.add-item {
+  margin-bottom: 0;
+} 
+.add-an-item{
+   
+}  
+
+.add-item.is-idle {
+  background-color: transparent;
+  padding: 0;
+}
+
+.add-item.is-idle .add-item-inputs {
+  display: none;
+}
+.add-item.add-item-inputs {
+  display: block;
+}
+.add-item.is-idle .add-an-item {
+  display: block;
+}
+.add-item .add-an-item {
+  display: none;
+}
+
+input.new-item {
+  background-color: transparent;
+  border: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  outline: none;
+  font-size: 1em;
+  width: calc(100% - 10px);
+  box-sizing: border-box;
+  float: left;
+  width: 180px;
+}
+
+.items {
+  /* need min heightto allow dragging into an empty list */
+  min-height: 10px;
+}
+
+.delete{
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 18px;
+  float: right;
+  color: rgba(0, 121, 191, 0.5);
+}
+
+li.done {
+  text-decoration: line-through;
+  color: #999;
+}
+
+
+button.toggle {
+  float: right;
+}
+button {
+  color: #efefef;
+  border: 1px solid #efefef;
+  cursor: pointer;
+  margin-top: -2px;
+}
+button.undone {
+  background-color: rgba(0, 121, 191, 0.5);
+}
+button.done {
+  background-color: rgba(120, 120, 120, 0.5);
+}
+
+input.new-item:focus {
+  background-color: white;
+  padding: 5px;
+  padding-bottom: 15px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  box-shadow: 0 1px 0 #ccc;
+}
+
+.delete::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}

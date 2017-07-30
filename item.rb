@@ -11,6 +11,10 @@ class Item
     status == "done"
   end
 
+  def remove_at!(index)
+		@items.delete_at(index)
+	end	
+  
   def display_line
     if done?
       '- [x] ' + name
@@ -26,6 +30,9 @@ class Item
       self.status = "done"
     end
   end
+
+  
+
 
   # returns a new item based on a line of text
   def self.new_from_line(line, index = nil)

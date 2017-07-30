@@ -4,16 +4,19 @@ Bundler.require
 require_relative "list"
 
 def debug_params
-  puts "PARAMS: #{params}"
+  puts "reload page: #{params}"
 end
 
 get "/" do
   # HINT: you can use instance variables in the view directly without passing to locals
   # such as this @title instance variable
-  @title = "Your App Name"
-  list = List.new("0")
-  list.load_from_file
-  erb :"index.html", locals: {list: list}, layout: :"layout.html"
+  @title = "Sunny TODO"
+  #list = List.new("0")
+  #list.load_from_file
+  lists = List.load_all_lists
+  #  lists list  
+  #p @files
+  erb :"index.html", locals: {lists: lists}, layout: :"layout.html"
 end
 
 # UPDATE a list with id from params["id"]
@@ -38,7 +41,7 @@ post "/lists/update" do
   list.save!
   redirect back
 end
-
+# ??? post "/lists/:id/items/add" do
 post "/lists/:id/items/add" do
   debug_params
 
@@ -49,5 +52,37 @@ post "/lists/:id/items/add" do
     list.add(params["name"])
     list.save!
   end
+  redirect back
+end
+
+post "list/tittle" do 
+
+end
+
+post '/lists/new' do
+  debug_params
+
+  files = Dir["./data/*.md"]
+  # @files = files.map do |file|
+  idlist= 0 
+  listids = [] 
+  puts files
+  files.each do |file|
+    listids << file[7].to_i
+  end
+
+  listids = listids.sort
+  puts listids
+  for i in 0..listids.length
+    puts idlist  
+    if (idlist == listids[i] )
+        idlist = idlist + 1
+    else
+        break
+    end    
+  end
+  list =List.new(idlist)
+  list.new_file(idlist,params['name'])  
+  
   redirect back
 end

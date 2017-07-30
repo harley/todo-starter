@@ -1,7 +1,8 @@
-<li class="<%= item.status %>">
+<li class="<%= item.status %> js-item">
   <%= item.name %>
   <input type="hidden" value="<%= item.name %>" name="items[][name]">
   <input type="hidden" value="<%= item.status %>" name="items[][status]">
+  <div class="js-delete-item delete"><i class=" fa fa-trash"></i></div>
   <button type="submit" name="toggle" value="<%= item.name %>"
     class="toggle <%= item.status %>">
     <%= item.done? ? "Undo" : "Done" %>

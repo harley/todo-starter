@@ -1,0 +1,43 @@
+.edit-inline .reader {
+  display: block;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 13px;
+}
+
+.edit-inline .writer {
+  display: none;
+}
+
+.edit-inline.editing .reader {
+  display: none;
+}
+
+.edit-inline.editing .writer {
+  display: flex;
+}
+
+.writer input[type=text] {
+  /*flex: 0.%;*/
+  padding: 2px;
+  margin-left: 3px;
+  margin-right: 5px;
+  margin-bottom: 1px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  font-size: 13px;
+  vertical-align: top;
+  color: #666;
+  height: 24px;
+}
+.writer button.save {
+  padding: 2px 5px;
+  background: none;
+  background-color: rgba(0, 121, 191, 0.5);
+}
+.writer .cancel {
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-left: 5px;
+}

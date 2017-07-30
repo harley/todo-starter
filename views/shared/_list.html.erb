@@ -1,0 +1,31 @@
+
+  <div class="list">
+    <form class="update-all" action="lists/update" method="post">
+      <input type="hidden" name="id" class ="list-id" value="<%= list.id %>">
+      <input type="hidden" name="name" value="<%= list.name %>">
+      <div class="delete-list js-delete-list list-header-container"><i class="material-icons">close</i></div> 
+      <div class="list-header-container"> 
+        <div class="list-header edit-inline  js-edit-inline">         
+          <div class="reader"><%= list.name || "new list"%></div>
+          <div class="writer">
+            <input type="text" name="name" value="<%= list.name %>" class="list-name-edit">
+            <button class="save " name="save_all">Save</button>
+          </div>
+        </div>  
+      </div>
+      <div class="js-sortable-item js-connected-item items">
+        <% list.items.each_with_index do |item, index| %>
+          <%= erb :"shared/_item.html", locals: {item: item} %>
+        <% end %>
+      </div>
+    </form>
+    
+    <form class="add-item is-idle" action="lists/<%= list.id %>/items/add" method="post">
+      <div class="add-an-item js-add-item"> Add an item... </div>
+      <div class="add-item-inputs">
+        <input type="text" name="name" class="new-item" placeholder="Add an item..." required>
+        <div class="cancel js-cancel-form"><i class="material-icons">close</i></div>
+      </div>   
+    </form>
+  </div>
+  

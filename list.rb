@@ -15,7 +15,11 @@ class List
     @name = @lines.shift # get the first line to be the List name
     @items = @lines.map.with_index {|line, index| Item.new_from_line(line, index)}
   end
-
+  def new_file(id,name)
+    file = File.open("./data/#{id}.md","w")
+    file.puts(name)
+    file.close
+  end
   def filename
     "data/#{id}.md"
   end
@@ -33,9 +37,20 @@ class List
   def add(name)
     self.items << Item.new(name)
   end
-
+  
   def save!
     lines = [name] + @items.map(&:display_line)
     File.write(filename, lines.join("\n"))
   end
+  def self.load_all_lists
+    lists = []
+    files = Dir["./data/*.md"]
+    files.map do |file|
+      list = new("#{file[7]}")
+      list.load_from_file
+      lists << list  
+    end
+    lists
+  end
+  
 end

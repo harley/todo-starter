@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>Todo App - First Edition</title>
+    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/edit-inline.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body style="background-color: rgb(0, 121, 191)">
+    <h1 id="heading">Trellodo</h1>
+
+<div class="list-container">
+  <div class="js-sortable-list">
+    
+      <div class="list">
+  <form class="update-list" action="lists/update" method="post">
+    <input type="hidden" class="list-id" name="id" value="0">
+    <input type="hidden" name="name" value="Today">
+    <div class="list-header-container">
+      <div class="list-header edit-inline js-edit-inline">
+        <span class="reader">Today</span>
+        <div class="writer">
+          <input type="text" name="name" value="Today" class="list-name-edit">
+          <button class="save small">Save</button>
+          <span class="cancel small">&times;</span>
+        </div>
+      </div>
+      <div name="list-menu">
+        <span class="save hidden" name="save_all">Saving...</span>
+      </div>
+    </div>
+    <div class="js-sortable-item js-connected-item items">
+      
+        <div class="item done">
+  Learn Strings
+  <input type="hidden" value="Learn Strings" name="items[][name]">
+  <input type="hidden" value="done" name="items[][status]">
+  <button name="toggle" value="Learn Strings"
+    class="small toggle done">
+    Undo
+  </button>
+  <button name="delete" value="Learn Strings" class="delete">&times;</button>
+</div>
+      
+        <div class="item done">
+  Learn Numbers
+  <input type="hidden" value="Learn Numbers" name="items[][name]">
+  <input type="hidden" value="done" name="items[][status]">
+  <button name="toggle" value="Learn Numbers"
+    class="small toggle done">
+    Undo
+  </button>
+  <button name="delete" value="Learn Numbers" class="delete">&times;</button>
+</div>
+      
+        <div class="item done">
+  Finish Current Lab
+  <input type="hidden" value="Finish Current Lab" name="items[][name]">
+  <input type="hidden" value="done" name="items[][status]">
+  <button name="toggle" value="Finish Current Lab"
+    class="small toggle done">
+    Undo
+  </button>
+  <button name="delete" value="Finish Current Lab" class="delete">&times;</button>
+</div>
+      
+    </div>
+  </form>
+  <form class="add-item" action="lists/0/items" method="post">
+    <input type="hidden" value="" name="sort" autofocus>
+    <input type="text" name="name" class="new-item" placeholder="Add an item..." required>
+  </form>
+</div>   
+  </div>
+
+  <div class="list list-add">
+    <form class="list-form is-idle" action="lists" method="post">
+      <div class="add-a-list js-add-list">Add a list...</div>
+      <div class="add-list-inputs">
+        <input type="text" class="list-name-input" name="list-name" autofocus>
+        <button class="primary save">Save</button>
+        <span class="cancel-form js-cancel-form">&times;</span>
+      </div>
+    </form>
+  </div>
+</div>
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <script src="vendor/html.sortable.js"></script>
+    <script src="js/item-sortable.js"></script>
+    <script src="js/list-sortable.js"></script>
+    <script src="js/edit-inline.js"></script>
+    <script src="js/form-remote.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

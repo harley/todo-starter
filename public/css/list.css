@@ -1,0 +1,140 @@
+
+.cancel{
+  margin-top: 2px;
+  margin-left: 10px;
+  font-size: 18px;
+  float: left;
+  color: red;
+}
+.delele-list{
+  margin-top: 2px;
+  font-size: 18px;
+  float: right;
+  background-color: blue;
+  color: red;
+}
+
+
+.list-name-input {
+  padding: 5px;
+  font-size: 1.2em;
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  background-color: transparent;
+  outline: none;
+}
+
+.list {
+  float: left;
+  background-color: #efefef;
+  color: #666;
+  padding: 5px;
+  width: 250px;
+  font-size: 1em;
+
+  margin-left: 10px;
+}
+.js-drag-hovered {
+  background-color: rgba(90, 90, 90, 0.3);
+}
+
+.sortable-placeholder {
+  padding: 15px;
+  background-color: #aaa;
+  box-shadow: none;
+}
+
+
+
+.list-header {
+  background-color: yellowgreen;
+  background-image: url("../images/sunny.png") ;
+  height: 30px;
+  width: 240px;
+  vertical-align: middle;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  text-align: center;
+ /* transform: rotate(-4deg);*/
+  align-self: center;
+
+  
+}
+ 
+.delete-list{
+  background-color: darkolivegreen;
+  margin-top: 0px;
+  height: 20px;
+  margin-bottom: 5px;
+  width: 100%;
+  color: orange;
+}
+    
+
+
+.list-name-edit {
+   width: 165px;
+   
+}
+
+.list {
+  float: left;
+  background-color: #efefef;
+  vertical-align: top;
+  color: #666;
+  width: 250px;
+  font-size: 0.8em;
+  border-radius: 3px;
+  margin-right: 10px;
+  padding: 5px;
+}
+/* action for JS-sortable*/
+.list-box-placeholder {
+  float: left;
+  background-color: rgba(0, 0, 0, .22);
+  width: 250px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+
+.add-a-list {
+  color: rgba(220, 220, 220, 0.7);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.list-form {
+  background-color: #efefef;
+  margin-bottom: 0;
+  padding: 5px;
+}
+.list-form.is-idle {
+  background-color: transparent;
+  padding: 0;
+}
+
+.list-form.is-idle .add-list-inputs {
+  display: none;
+}
+.list-form .add-list-inputs {
+  display: block;
+}
+.list-form.is-idle .add-a-list {
+  display: block;
+}
+.list-form .add-a-list {
+  display: none;
+}
+
+.list-container {
+  float: left;
+  width: 1400px;
+  padding:0.01em 16px;
+}
+  /* set the background of the placeholder */
+.sortable-placeholder {
+
+  background-color: #999;
+}
