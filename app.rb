@@ -68,10 +68,10 @@ end
 
 post "/delist/name" do
   list_dump = List.new("#{params[:id]}")
-  #direct = list_dump.filename
+  target = list_dump.id.concat(".md")
   files = Dir["data/*.md"]
   files.each do |file|
-    file.delete("")
+    file.delete("target")
   end  
   redirect back
 end
