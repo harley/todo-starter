@@ -43,7 +43,7 @@ input.new-item {
 }
 
 .delete{
-  margin-top: 5px;
+  margin-top: 0px;
   margin-left: 10px;
   font-size: 18px;
   float: right;
@@ -81,7 +81,3 @@ input.new-item:focus {
   box-shadow: 0 1px 0 #ccc;
 }
 
-.delete::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}

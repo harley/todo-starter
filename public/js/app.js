@@ -151,6 +151,7 @@ $(".js-edit-inline .cancel").click(function(event) {
 
 $("form").on("submit", function(element) {
   var form = $(this);
+   console.log("father of this item3:", form);
   if (!form.hasClass("js-remote")) {
     return;
   }
@@ -202,3 +203,26 @@ $(".js-sortable-item .js-delete-item").click(function(e){
             }
         });
     });*/
+
+//use button to delete
+$(".js-sortable-list .js-delete-list").click(function(e){
+  var form = $(e.target).parents("form");
+  console.log("father of this item:", form);
+  //console.log("borther1 :",$(this).siblings(".js-name").val());
+  //$(this).siblings("js-name").val("a")  ;
+   //$(this).siblings("js-name").val("value = " + $("js-name").val().replace("placeholder", ""));
+  //console.log("borther3 :", $(this).siblings("js-name").val());
+
+  //$(this).siblings(".js-sortable-item").children(".js-item").remove()
+  
+  //console.log("father of this item2:", form);
+  
+ 
+  //form.submit();
+  $(this).parents(".list").remove();
+  //$(this).parents("form").remove();  
+   //console.log("father of this item4:", form);
+    // form.addClass("js-remote").submit().removeClass("js-remote");
+   //console.log("father of this item2:", form);
+
+});    

@@ -15,8 +15,11 @@
   </div>
 
   <div class="list-container">
-    <div class=" js-sortable-list">  
-      <% lists.each do |list| %>
-      <%= erb :"shared/_list.html", locals: {list: list} %>
-    <% end  %>
-  </div>  
+   
+      <div class="js-sortable-list">  
+        <% lists.each do |list| %>
+          <%= erb :"shared/_list.html", locals: {list: list} %>
+        <% end  %>
+      </div>  
+   
+      

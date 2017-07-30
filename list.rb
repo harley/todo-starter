@@ -52,5 +52,9 @@ class List
     end
     lists
   end
+
+  def delete_list(filename)
+    File.delete(filename)
+  end
   
 end

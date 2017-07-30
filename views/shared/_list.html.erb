@@ -2,7 +2,7 @@
   <div class="list">
     <form class="update-all" action="lists/update" method="post">
       <input type="hidden" name="id" class ="list-id" value="<%= list.id %>">
-      <input type="hidden" name="name" value="<%= list.name %>">
+      <input type="hidden" name="name" class ="js-name" value="<%= list.name %>">
       <div class="delete-list js-delete-list list-header-container"><i class="material-icons">close</i></div> 
       <div class="list-header-container"> 
         <div class="list-header edit-inline  js-edit-inline">         

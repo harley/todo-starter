@@ -22,11 +22,16 @@ end
 # UPDATE a list with id from params["id"]
 post "/lists/update" do
   debug_params
-
+  puts "delete-list: #{params["delete-list"]}"
   list = List.new(params["id"])
+  if ((params["name"] =="" && params["items"]=="") ||(params["name"] =="" && params["save_all"]=="") ) 
+    #&& (params["items"]=="" ||params["save_all"]==""))
+    puts "we will delete this list!"
+    list.delete_list(list.filename)
+    redirect back
+  end
+    # no need to load from file. we will save new contents to file
   list.name = params["name"]
-  # no need to load from file. we will save new contents to file
-
   items = params["items"].map do |item_hash|
     puts "creating Item from item_hash: #{item_hash}"
     Item.new(item_hash["name"], item_hash["status"])
@@ -55,9 +60,9 @@ post "/lists/:id/items/add" do
   redirect back
 end
 
-post "list/tittle" do 
-
-end
+post "lists/delete" do
+  debug_params
+end  
 
 post '/lists/new' do
   debug_params
@@ -82,7 +87,7 @@ post '/lists/new' do
     end    
   end
   list =List.new(idlist)
-  list.new_file(idlist,params['name'])  
+  list.new_file(idlist,params['list-name'])  
   
   redirect back
 end

@@ -73,7 +73,7 @@ See the [Assignment 3](http://learning.coderschool.vn/courses/_bootcamp_ruby/uni
 
 - [X] User can rename a list. For example “Today” to “Inbox”
 - [X] User can delete an item
-- [ ] User can delete a list
+- [ ] User can delete a list ( I am Sorry I got bug)
 - [X] User can rename the current's list's name
 
 **Additional User Stories:**
